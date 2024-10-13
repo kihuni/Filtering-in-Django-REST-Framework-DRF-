@@ -30,8 +30,8 @@ To run the sample project from the blog, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/django-drf-filtering-example.git
-    cd django-drf-filtering-example
+    https://github.com/yourusername/Filtering-in-Django-REST-Framework-DRF-.git
+    cd Filtering-in-Django-REST-Framework-DRF
     ```
 
 2. **Set up a virtual environment**:
@@ -48,11 +48,6 @@ To run the sample project from the blog, follow these steps:
 4. **Run migrations**:
     ```bash
     python manage.py migrate
-    ```
-
-5. **Load sample data** (optional):
-    ```bash
-    python manage.py loaddata sample_data.json
     ```
 
 6. **Run the server**:
