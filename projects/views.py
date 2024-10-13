@@ -6,8 +6,11 @@ from .serializers import ProjectSerializer
 
 class ProjectListView(generics.ListAPIView):
     queryset = Project.objects.all().order_by('name', 'created_at')
-    print(queryset.query)
     serializer_class = ProjectSerializer
     filter_backends = [DjangoFilterBackend]  # Enable filtering
-    filterset_class = ProjectFilter  # Use our custom filter
-
+    filterset_class = ProjectFilter  # Use the custom filter
+    
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        print("Filtered QuerySet:", queryset.query)  # Debugging: Print SQL query
+        return super().list(request, *args, **kwargs)
